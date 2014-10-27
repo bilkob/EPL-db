@@ -163,53 +163,53 @@ VALUE LABELS HalfTimeResult
 EXECUTE.
 
 
-**********************************Creating the Team Wins Variable (Scale)*************************************
+**********************************Creating the Winning Team Variable (Scale)*************************************
 
-IF ((HomeTeam = 1  & FullTimeResult=1) | (AwayTeam=1  & FullTimeResult=3)) TeamWins = 1.
+IF ((HomeTeam = 1  & FullTimeResult=1) | (AwayTeam=1  & FullTimeResult=3)) WinningTeam = 1.
 IF ((HomeTeam = 2  & FullTimeResult=1) | (AwayTeam=2  & FullTimeResult=3)) TeamWins = 2.
-IF ((HomeTeam = 3  & FullTimeResult=1) | (AwayTeam=3  & FullTimeResult=3)) TeamWins = 3.
-IF ((HomeTeam = 4  & FullTimeResult=1) | (AwayTeam=4  & FullTimeResult=3)) TeamWins = 4.
-IF ((HomeTeam = 5  & FullTimeResult=1) | (AwayTeam=5  & FullTimeResult=3)) TeamWins = 5.
-IF ((HomeTeam = 6  & FullTimeResult=1) | (AwayTeam=6  & FullTimeResult=3)) TeamWins = 6.
-IF ((HomeTeam = 7  & FullTimeResult=1) | (AwayTeam=7  & FullTimeResult=3)) TeamWins = 7.
-IF ((HomeTeam = 8  & FullTimeResult=1) | (AwayTeam=8  & FullTimeResult=3)) TeamWins = 8.
-IF ((HomeTeam = 9  & FullTimeResult=1) | (AwayTeam=9  & FullTimeResult=3)) TeamWins = 9.
-IF ((HomeTeam = 10  & FullTimeResult=1) | (AwayTeam=10  & FullTimeResult=3)) TeamWins = 10.
-IF ((HomeTeam = 11  & FullTimeResult=1) | (AwayTeam=11  & FullTimeResult=3)) TeamWins = 11.
-IF ((HomeTeam = 12  & FullTimeResult=1) | (AwayTeam=12  & FullTimeResult=3)) TeamWins = 12.
-IF ((HomeTeam = 13  & FullTimeResult=1) | (AwayTeam=13  & FullTimeResult=3)) TeamWins = 13.
-IF ((HomeTeam = 14  & FullTimeResult=1) | (AwayTeam=14  & FullTimeResult=3)) TeamWins = 14.
-IF ((HomeTeam = 15  & FullTimeResult=1) | (AwayTeam=15  & FullTimeResult=3)) TeamWins = 15.
-IF ((HomeTeam = 16  & FullTimeResult=1) | (AwayTeam=16  & FullTimeResult=3)) TeamWins = 16.
-IF ((HomeTeam = 17  & FullTimeResult=1) | (AwayTeam=17  & FullTimeResult=3)) TeamWins = 17.
-IF ((HomeTeam = 18  & FullTimeResult=1) | (AwayTeam=18  & FullTimeResult=3)) TeamWins = 18.
-IF ((HomeTeam = 19  & FullTimeResult=1) | (AwayTeam=19  & FullTimeResult=3)) TeamWins = 19.
-IF ((HomeTeam = 20  & FullTimeResult=1) | (AwayTeam=20  & FullTimeResult=3)) TeamWins = 20.
-IF ((HomeTeam = 21  & FullTimeResult=1) | (AwayTeam=21  & FullTimeResult=3)) TeamWins = 21.
-IF ((HomeTeam = 22  & FullTimeResult=1) | (AwayTeam=22  & FullTimeResult=3)) TeamWins = 22.
-IF ((HomeTeam = 23  & FullTimeResult=1) | (AwayTeam=23  & FullTimeResult=3)) TeamWins = 23.
-IF ((HomeTeam = 24  & FullTimeResult=1) | (AwayTeam=24  & FullTimeResult=3)) TeamWins = 24.
-IF ((HomeTeam = 25  & FullTimeResult=1) | (AwayTeam=25  & FullTimeResult=3)) TeamWins = 25.
-IF ((HomeTeam = 26  & FullTimeResult=1) | (AwayTeam=26  & FullTimeResult=3)) TeamWins = 26.
-IF ((HomeTeam = 27  & FullTimeResult=1) | (AwayTeam=27  & FullTimeResult=3)) TeamWins = 27.
-IF ((HomeTeam = 28  & FullTimeResult=1) | (AwayTeam=28  & FullTimeResult=3)) TeamWins = 28.
-IF ((HomeTeam = 29  & FullTimeResult=1) | (AwayTeam=29  & FullTimeResult=3)) TeamWins = 29.
-IF ((HomeTeam = 30  & FullTimeResult=1) | (AwayTeam=30  & FullTimeResult=3)) TeamWins = 30.
-IF ((HomeTeam = 31  & FullTimeResult=1) | (AwayTeam=31  & FullTimeResult=3)) TeamWins = 31.
-IF ((HomeTeam = 32  & FullTimeResult=1) | (AwayTeam=32  & FullTimeResult=3)) TeamWins = 32.
-IF ((HomeTeam = 33  & FullTimeResult=1) | (AwayTeam=33  & FullTimeResult=3)) TeamWins = 33.
-IF ((HomeTeam = 34  & FullTimeResult=1) | (AwayTeam=34  & FullTimeResult=3)) TeamWins = 34.
-IF ((HomeTeam = 35  & FullTimeResult=1) | (AwayTeam=35  & FullTimeResult=3)) TeamWins = 35.
-IF ((HomeTeam = 36  & FullTimeResult=1) | (AwayTeam=36  & FullTimeResult=3)) TeamWins = 36.
-IF ((HomeTeam = 37  & FullTimeResult=1) | (AwayTeam=37  & FullTimeResult=3)) TeamWins = 37.
-IF ((HomeTeam = 38  & FullTimeResult=1) | (AwayTeam=38  & FullTimeResult=3)) TeamWins = 38.
-RECODE TeamWins (SYSMIS=777).
+IF ((HomeTeam = 3  & FullTimeResult=1) | (AwayTeam=3  & FullTimeResult=3)) WinningTeam = 3.
+IF ((HomeTeam = 4  & FullTimeResult=1) | (AwayTeam=4  & FullTimeResult=3)) WinningTeam = 4.
+IF ((HomeTeam = 5  & FullTimeResult=1) | (AwayTeam=5  & FullTimeResult=3)) WinningTeam = 5.
+IF ((HomeTeam = 6  & FullTimeResult=1) | (AwayTeam=6  & FullTimeResult=3)) WinningTeam = 6.
+IF ((HomeTeam = 7  & FullTimeResult=1) | (AwayTeam=7  & FullTimeResult=3)) WinningTeam = 7.
+IF ((HomeTeam = 8  & FullTimeResult=1) | (AwayTeam=8  & FullTimeResult=3)) WinningTeam = 8.
+IF ((HomeTeam = 9  & FullTimeResult=1) | (AwayTeam=9  & FullTimeResult=3)) WinningTeam = 9.
+IF ((HomeTeam = 10  & FullTimeResult=1) | (AwayTeam=10  & FullTimeResult=3)) WinningTeam = 10.
+IF ((HomeTeam = 11  & FullTimeResult=1) | (AwayTeam=11  & FullTimeResult=3)) WinningTeam = 11.
+IF ((HomeTeam = 12  & FullTimeResult=1) | (AwayTeam=12  & FullTimeResult=3)) WinningTeam = 12.
+IF ((HomeTeam = 13  & FullTimeResult=1) | (AwayTeam=13  & FullTimeResult=3)) WinningTeam = 13.
+IF ((HomeTeam = 14  & FullTimeResult=1) | (AwayTeam=14  & FullTimeResult=3)) WinningTeam = 14.
+IF ((HomeTeam = 15  & FullTimeResult=1) | (AwayTeam=15  & FullTimeResult=3)) WinningTeam = 15.
+IF ((HomeTeam = 16  & FullTimeResult=1) | (AwayTeam=16  & FullTimeResult=3)) WinningTeam = 16.
+IF ((HomeTeam = 17  & FullTimeResult=1) | (AwayTeam=17  & FullTimeResult=3)) WinningTeam = 17.
+IF ((HomeTeam = 18  & FullTimeResult=1) | (AwayTeam=18  & FullTimeResult=3)) WinningTeam = 18.
+IF ((HomeTeam = 19  & FullTimeResult=1) | (AwayTeam=19  & FullTimeResult=3)) WinningTeam = 19.
+IF ((HomeTeam = 20  & FullTimeResult=1) | (AwayTeam=20  & FullTimeResult=3)) WinningTeam = 20.
+IF ((HomeTeam = 21  & FullTimeResult=1) | (AwayTeam=21  & FullTimeResult=3)) WinningTeam = 21.
+IF ((HomeTeam = 22  & FullTimeResult=1) | (AwayTeam=22  & FullTimeResult=3)) WinningTeam = 22.
+IF ((HomeTeam = 23  & FullTimeResult=1) | (AwayTeam=23  & FullTimeResult=3)) WinningTeam = 23.
+IF ((HomeTeam = 24  & FullTimeResult=1) | (AwayTeam=24  & FullTimeResult=3)) WinningTeam = 24.
+IF ((HomeTeam = 25  & FullTimeResult=1) | (AwayTeam=25  & FullTimeResult=3)) WinningTeam = 25.
+IF ((HomeTeam = 26  & FullTimeResult=1) | (AwayTeam=26  & FullTimeResult=3)) WinningTeam = 26.
+IF ((HomeTeam = 27  & FullTimeResult=1) | (AwayTeam=27  & FullTimeResult=3)) WinningTeam = 27.
+IF ((HomeTeam = 28  & FullTimeResult=1) | (AwayTeam=28  & FullTimeResult=3)) WinningTeam = 28.
+IF ((HomeTeam = 29  & FullTimeResult=1) | (AwayTeam=29  & FullTimeResult=3)) WinningTeam = 29.
+IF ((HomeTeam = 30  & FullTimeResult=1) | (AwayTeam=30  & FullTimeResult=3)) WinningTeam = 30.
+IF ((HomeTeam = 31  & FullTimeResult=1) | (AwayTeam=31  & FullTimeResult=3)) WinningTeam = 31.
+IF ((HomeTeam = 32  & FullTimeResult=1) | (AwayTeam=32  & FullTimeResult=3)) WinningTeam = 32.
+IF ((HomeTeam = 33  & FullTimeResult=1) | (AwayTeam=33  & FullTimeResult=3)) WinningTeam = 33.
+IF ((HomeTeam = 34  & FullTimeResult=1) | (AwayTeam=34  & FullTimeResult=3)) WinningTeam = 34.
+IF ((HomeTeam = 35  & FullTimeResult=1) | (AwayTeam=35  & FullTimeResult=3)) WinningTeam = 35.
+IF ((HomeTeam = 36  & FullTimeResult=1) | (AwayTeam=36  & FullTimeResult=3)) WinningTeam = 36.
+IF ((HomeTeam = 37  & FullTimeResult=1) | (AwayTeam=37  & FullTimeResult=3)) WinningTeam = 37.
+IF ((HomeTeam = 38  & FullTimeResult=1) | (AwayTeam=38  & FullTimeResult=3)) WinningTeam = 38.
+RECODE WinningTeam (SYSMIS=777).
 EXECUTE.
 
-VARIABLE LABELS TeamWins
+VARIABLE LABELS WinningTeam
 'Winning Team'.
 
-VALUE LABELS TeamWins
+VALUE LABELS WinningTeam
 1 'Arsenal'
 2 'Aston Villa'
 3 'Birmingham'
