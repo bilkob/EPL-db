@@ -1,0 +1,262 @@
+*****************************************************************************************************
+**********************************Cleaning the 2001-2014 database****************************
+*****************************************************************************************************
+
+**********************************Creating ID Variable********************************************
+
+COMPUTE ID=$CASENUM.
+EXECUTE.
+
+**********************************Creating the Season Variable (Scale)/Recoding the ID Variable (Scale)*************************************
+
+
+RECODE ID (1 thru 380=1) (381 thru 760=2) (761 thru 1140=3) (1141 thru 1520=4) (1521 thru 1900 = 5) (1901 thru 2280 = 6)
+(2281 thru 2660 = 7) (2661 thru 3040 = 8) (3041 thru 3420 = 9) (3421 thru 3800 = 10) (3801 thru 4180 = 11) (4181 thru 4560=12) (4561 thru 4940 = 13)  INTO Season.
+
+VARIABLE LABELS  Season 
+'Season'.
+
+VALUE LABELS Season
+1 '2001/2002'
+2 '2002/2003'
+3 '2003/2004'
+4 '2004/2005'
+5 '2005/2006'
+6 '2006/2007'
+7 '2007/2008'
+8 '2008/2009'
+9 '2009/2010'
+10 '2010/2011'
+11 '2011/2012'
+12 '2012/2013'
+13 '2013/2014'.
+EXECUTE.
+
+**********************************Creating the Home Team Variable (Scale) / Recoding the Home Team Variable (String)************************************
+
+
+RECODE HomeTeamString ('Arsenal' = 1) ('Aston Villa' = 2) ('Birmingham' = 3) ('Blackburn' = 4) ('Blackpool' = 5) ('Bolton'= 6) ('Burnley' = 7) ('Cardiff' = 8) ('Charlton' = 9) ('Chelsea' = 10) ('Crystal Palace' = 11) ('Derby' = 12) ('Everton' = 13)
+('Fulham' = 14) ('Hull' = 15) ('Ipswich' = 16) ('Leeds' = 17) ('Leicester' = 18) ('Liverpool' = 19) ('Man City' = 20) ('Man United' = 21) ('Middlesboro' = 22) ('Middlesbrough' = 22) ('Newcastle' = 23) ('Norwich' = 24) ('Portsmouth' = 25) ('QPR' = 26) 
+('Reading' = 27) ('Sheffield United' = 28) ('Southampton' = 29) ('Stoke' = 30) ('Sunderland' = 31) ('Swansea' = 32) ('Tottenham' = 33) ('Watford' = 34) ('West Brom' = 35) ('West Ham' = 36) ('Wigan' = 37) ('Wolves' = 38) INTO HomeTeam.
+
+VARIABLE LABELS HomeTeam
+'Home Team'.
+
+VALUE LABELS HomeTeam
+1 'Arsenal'
+2 'Aston Villa'
+3 'Birmingham'
+4 'Blackburn'
+5 'Blackpool'
+6 'Bolton'
+7 'Burnley'
+8 'Cardiff'
+9 'Charlton'
+10 'Chelsea'
+11 'Crystal Palace'
+12 'Derby'
+13 'Everton'
+14 'Fulham'
+15 'Hull'
+16 'Ipswich'
+17 'Leeds'
+18 'Leicester'
+19 'Liverpool'
+20 'Man City'
+21 'Man United'
+22 'Middlesbrough'
+23 'Newcastle'
+24 'Norwich'
+25 'Portsmouth'
+26 'QPR'
+27 'Reading'
+28 'Sheffield United'
+29 'Southampton'
+30 'Stoke'
+31 'Sunderland'
+32 'Swansea'
+33 'Tottenham'
+34 'Watford'
+35 'West Brom'
+36 'West Ham'
+37 'Wigan'
+38 'Wolves'.
+EXECUTE.
+
+
+**********************************Creating the Away Team Variable (Scale)/ Recoding the Away Team Variable (String)*************************************
+
+
+RECODE AwayTeamString ('Arsenal' = 1) ('Aston Villa' = 2) ('Birmingham' = 3) ('Blackburn' = 4) ('Blackpool' = 5) ('Bolton'= 6) ('Burnley' = 7) ('Cardiff' = 8) ('Charlton' = 9) ('Chelsea' = 10) ('Crystal Palace' = 11) ('Derby' = 12) ('Everton' = 13)
+('Fulham' = 14) ('Hull' = 15) ('Ipswich' = 16) ('Leeds' = 17) ('Leicester' = 18) ('Liverpool' = 19) ('Man City' = 20) ('Man United' = 21) ('Middlesboro' = 22) ('Middlesbrough' = 22) ('Newcastle' = 23) ('Norwich' = 24) ('Portsmouth' = 25) ('QPR' = 26) 
+('Reading' = 27) ('Sheffield United' = 28) ('Southampton' = 29) ('Stoke' = 30) ('Sunderland' = 31) ('Swansea' = 32) ('Tottenham' = 33) ('Watford' = 34) ('West Brom' = 35) ('West Ham' = 36) ('Wigan' = 37) ('Wolves' = 38) INTO AwayTeam.
+
+VARIABLE LABELS AwayTeam
+'Away Team'.
+
+VALUE LABELS AwayTeam
+1 'Arsenal'
+2 'Aston Villa'
+3 'Birmingham'
+4 'Blackburn'
+5 'Blackpool'
+6 'Bolton'
+7 'Burnley'
+8 'Cardiff'
+9 'Charlton'
+10 'Chelsea'
+11 'Crystal Palace'
+12 'Derby'
+13 'Everton'
+14 'Fulham'
+15 'Hull'
+16 'Ipswich'
+17 'Leeds'
+18 'Leicester'
+19 'Liverpool'
+20 'Man City'
+21 'Man United'
+22 'Middlesbrough'
+23 'Newcastle'
+24 'Norwich'
+25 'Portsmouth'
+26 'QPR'
+27 'Reading'
+28 'Sheffield United'
+29 'Southampton'
+30 'Stoke'
+31 'Sunderland'
+32 'Swansea'
+33 'Tottenham'
+34 'Watford'
+35 'West Brom'
+36 'West Ham'
+37 'Wigan'
+38 'Wolves'.
+EXECUTE.
+
+
+**********************************Creating the FullTime Result Variable (Scale)/ Recoding the Full Time Result Variable (String)*************************************
+
+RECODE FTR ('H' = 1) ('D' = 2) ('A' = 3) INTO FullTimeResult.
+
+VARIABLE LABELS FullTimeResult
+'Full-time Result (Home Win, Draw, Away Win)'.
+
+VALUE LABELS FullTimeResult
+1 'Home Win'
+2 'Draw'
+3 'Away Win'.
+EXECUTE.
+
+**********************************Creating the Half-Time Result Variable (Scale) /Recoding the Half-Time Result Variable (String)************************************
+
+RECODE HTR ('H' = 1) ('D' = 2) ('A' = 3) INTO HalfTimeResult.
+
+VARIABLE LABELS HalfTimeResult
+'Half-time Result (Home Win, Draw, Away Win)'.
+
+VALUE LABELS HalfTimeResult
+1 'Home Win'
+2 'Draw'
+3 'Away Win'.
+EXECUTE.
+
+
+**********************************Creating the Team Wins Variable (Scale)*************************************
+
+IF ((HomeTeam = 1  & FullTimeResult=1) | (AwayTeam=1  & FullTimeResult=3)) TeamWins = 1.
+IF ((HomeTeam = 2  & FullTimeResult=1) | (AwayTeam=2  & FullTimeResult=3)) TeamWins = 2.
+IF ((HomeTeam = 3  & FullTimeResult=1) | (AwayTeam=3  & FullTimeResult=3)) TeamWins = 3.
+IF ((HomeTeam = 4  & FullTimeResult=1) | (AwayTeam=4  & FullTimeResult=3)) TeamWins = 4.
+IF ((HomeTeam = 5  & FullTimeResult=1) | (AwayTeam=5  & FullTimeResult=3)) TeamWins = 5.
+IF ((HomeTeam = 6  & FullTimeResult=1) | (AwayTeam=6  & FullTimeResult=3)) TeamWins = 6.
+IF ((HomeTeam = 7  & FullTimeResult=1) | (AwayTeam=7  & FullTimeResult=3)) TeamWins = 7.
+IF ((HomeTeam = 8  & FullTimeResult=1) | (AwayTeam=8  & FullTimeResult=3)) TeamWins = 8.
+IF ((HomeTeam = 9  & FullTimeResult=1) | (AwayTeam=9  & FullTimeResult=3)) TeamWins = 9.
+IF ((HomeTeam = 10  & FullTimeResult=1) | (AwayTeam=10  & FullTimeResult=3)) TeamWins = 10.
+IF ((HomeTeam = 11  & FullTimeResult=1) | (AwayTeam=11  & FullTimeResult=3)) TeamWins = 11.
+IF ((HomeTeam = 12  & FullTimeResult=1) | (AwayTeam=12  & FullTimeResult=3)) TeamWins = 12.
+IF ((HomeTeam = 13  & FullTimeResult=1) | (AwayTeam=13  & FullTimeResult=3)) TeamWins = 13.
+IF ((HomeTeam = 14  & FullTimeResult=1) | (AwayTeam=14  & FullTimeResult=3)) TeamWins = 14.
+IF ((HomeTeam = 15  & FullTimeResult=1) | (AwayTeam=15  & FullTimeResult=3)) TeamWins = 15.
+IF ((HomeTeam = 16  & FullTimeResult=1) | (AwayTeam=16  & FullTimeResult=3)) TeamWins = 16.
+IF ((HomeTeam = 17  & FullTimeResult=1) | (AwayTeam=17  & FullTimeResult=3)) TeamWins = 17.
+IF ((HomeTeam = 18  & FullTimeResult=1) | (AwayTeam=18  & FullTimeResult=3)) TeamWins = 18.
+IF ((HomeTeam = 19  & FullTimeResult=1) | (AwayTeam=19  & FullTimeResult=3)) TeamWins = 19.
+IF ((HomeTeam = 20  & FullTimeResult=1) | (AwayTeam=20  & FullTimeResult=3)) TeamWins = 20.
+IF ((HomeTeam = 21  & FullTimeResult=1) | (AwayTeam=21  & FullTimeResult=3)) TeamWins = 21.
+IF ((HomeTeam = 22  & FullTimeResult=1) | (AwayTeam=22  & FullTimeResult=3)) TeamWins = 22.
+IF ((HomeTeam = 23  & FullTimeResult=1) | (AwayTeam=23  & FullTimeResult=3)) TeamWins = 23.
+IF ((HomeTeam = 24  & FullTimeResult=1) | (AwayTeam=24  & FullTimeResult=3)) TeamWins = 24.
+IF ((HomeTeam = 25  & FullTimeResult=1) | (AwayTeam=25  & FullTimeResult=3)) TeamWins = 25.
+IF ((HomeTeam = 26  & FullTimeResult=1) | (AwayTeam=26  & FullTimeResult=3)) TeamWins = 26.
+IF ((HomeTeam = 27  & FullTimeResult=1) | (AwayTeam=27  & FullTimeResult=3)) TeamWins = 27.
+IF ((HomeTeam = 28  & FullTimeResult=1) | (AwayTeam=28  & FullTimeResult=3)) TeamWins = 28.
+IF ((HomeTeam = 29  & FullTimeResult=1) | (AwayTeam=29  & FullTimeResult=3)) TeamWins = 29.
+IF ((HomeTeam = 30  & FullTimeResult=1) | (AwayTeam=30  & FullTimeResult=3)) TeamWins = 30.
+IF ((HomeTeam = 31  & FullTimeResult=1) | (AwayTeam=31  & FullTimeResult=3)) TeamWins = 31.
+IF ((HomeTeam = 32  & FullTimeResult=1) | (AwayTeam=32  & FullTimeResult=3)) TeamWins = 32.
+IF ((HomeTeam = 33  & FullTimeResult=1) | (AwayTeam=33  & FullTimeResult=3)) TeamWins = 33.
+IF ((HomeTeam = 34  & FullTimeResult=1) | (AwayTeam=34  & FullTimeResult=3)) TeamWins = 34.
+IF ((HomeTeam = 35  & FullTimeResult=1) | (AwayTeam=35  & FullTimeResult=3)) TeamWins = 35.
+IF ((HomeTeam = 36  & FullTimeResult=1) | (AwayTeam=36  & FullTimeResult=3)) TeamWins = 36.
+IF ((HomeTeam = 37  & FullTimeResult=1) | (AwayTeam=37  & FullTimeResult=3)) TeamWins = 37.
+IF ((HomeTeam = 38  & FullTimeResult=1) | (AwayTeam=38  & FullTimeResult=3)) TeamWins = 38.
+RECODE TeamWins (SYSMIS=777).
+EXECUTE.
+
+VARIABLE LABELS TeamWins
+'Winning Team'.
+
+VALUE LABELS TeamWins
+1 'Arsenal'
+2 'Aston Villa'
+3 'Birmingham'
+4 'Blackburn'
+5 'Blackpool'
+6 'Bolton'
+7 'Burnley'
+8 'Cardiff'
+9 'Charlton'
+10 'Chelsea'
+11 'Crystal Palace'
+12 'Derby'
+13 'Everton'
+14 'Fulham'
+15 'Hull'
+16 'Ipswich'
+17 'Leeds'
+18 'Leicester'
+19 'Liverpool'
+20 'Man City'
+21 'Man United'
+22 'Middlesbrough'
+23 'Newcastle'
+24 'Norwich'
+25 'Portsmouth'
+26 'QPR'
+27 'Reading'
+28 'Sheffield United'
+29 'Southampton'
+30 'Stoke'
+31 'Sunderland'
+32 'Swansea'
+33 'Tottenham'
+34 'Watford'
+35 'West Brom'
+36 'West Ham'
+37 'Wigan'
+38 'Wolves'
+777 'Draw'.
+EXECUTE.
+
+
+
+
+
+
+
+
+
+
